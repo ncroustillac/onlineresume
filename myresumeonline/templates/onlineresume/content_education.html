@@ -1,0 +1,22 @@
+{% for educ in educations %}
+<div class="content" id="educ{{ educ.id }}">
+    <h2>{{ educ.title }}</h2>
+    <ul>
+        <li><a href="#desc" id="desc">Description</a></li>
+        <li><a href="#place" id="place">Place</a></li>
+    </ul>
+    
+    <p id="desc">
+        {{ educ.desc }}
+    </p>
+
+    <p id="place">
+        {{ educ.place.name }}
+        {{ educ.place.address }}
+        {{educ.place.city }}
+    </p>
+</div>
+<br />
+<br />
+<br />
+{% endfor %}

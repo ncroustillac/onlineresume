@@ -14,10 +14,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    (r'^index/$', 'onlineresume.views.index'),
+    (r'^index/$','onlineresume.views.index'),
+    (r'^index/(?P<content>\w+)$', 'onlineresume.views.index'),
     (r'^education/$', 'onlineresume.views.education'),
     (r'^experience/$', 'onlineresume.views.experience'),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': '/home/nil/dev/django/mysite/myresumeonline/media'}),
+        {'document_root': '/home/ncroustillac/Dropbox/Public/mysite/myresumeonline/media'}),
 )
 
