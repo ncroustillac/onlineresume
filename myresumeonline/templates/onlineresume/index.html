@@ -4,24 +4,11 @@
 <head>
     <title>{{applicant}}</title>
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <link type="text/css" rel="stylesheet" href="/site_media/css/screen.css" /></link>
+    <link type="text/css" rel="stylesheet" href="/site_media/css/personal.css" /></link>
 
     <!-- remember that in production state, i can get jquery from google repositories-->
     <script src="/site_media/javascript/jquery-1.4.4.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    function getContent(selection) {
-        $.get('./'+selection, function(datas) {
-            $('#content-wrap').html(datas);
-            $('.content p').hide();
-            $('.content a').click(function() { 
-                var content = $(this).parents('.content').attr('id');
-                $('#'+content+' p').hide();
-                $('#'+content+' p#'+this.id).show('slow');
-                });
-            });
-    }
-
-    </script>
+    <script src="/site_media/javascript/personal.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -29,13 +16,16 @@
     <!-- header -->
     <div id="header">
 
-        <h1 id="logo-text"><a href="index" title="">{{applicant.first_name}} {{applicant.last_name}} </a></h1>
-        <p id="intro">Embedded System Firmware Engineer</p>
 
             <!-- navigation -->
             <div  id="nav">
                 <ul>
-                    <li><input type="button" value="Acceuil" id="index"></input></li>
+                    <li>
+                        <input type="button" width=300px
+                        value={{applicant.first_name}}{{applicant.last_name}}
+                        id="home" >
+                        </input>
+                    </li>
                     <li><input type="button" value="Experiences" id="experience"></input></li>
                     <li><input type="button" value="Formations" id="education"></input></li>
                     <li><input type="button" value="Competences" id="skills"></input></li>
@@ -47,29 +37,29 @@
     </div>
     <!-- header ends -->
 
+    <!-- menu starts -->
+    <div id="menu-wrap" >
+        du blabla encore du blabla
+    </div>
+
     <!-- content starts -->
-    <div id="content-outer" class="clear" ><div id="content-wrap" >
-
-        {% block content_title %}
-
+    <div id="content-wrap" >
+        {% block block_content %}
         {% endblock %}
+    </div>
 
-
-        <div id="footer-bottom">	
-            <p>
-                <a href="index.html">Home</a> |
-                <a href="index.html">Sitemap</a> |
-                <a href="index.html">RSS Feed</a> |
-                <a href="#top">Top</a>
-            </p>
-        </div>
-
-    <!-- wrap ends -->
-    </div></div>
+    <div id="footer-bottom">	
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="index.html">Sitemap</a> |
+            <a href="index.html">RSS Feed</a> |
+            <a href="#top">Top</a>
+        </p>
+    </div>
 
 <script type="text/javascript">
 
-$('input')
+$('#nav input')
     .click(function() getContent(this.id));
 
 </script>

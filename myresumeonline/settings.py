@@ -70,6 +70,8 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     '/home/ncroustillac/Dropbox/Public/mysite/myresumeonline/templates/',
+    # Laptop absolute path
+    '/home/nil/partage/dev/onlineresume/myresumeonline/templates/',
 )
 
 INSTALLED_APPS = (

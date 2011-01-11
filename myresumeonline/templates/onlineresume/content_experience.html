@@ -1,21 +1,17 @@
-{% for exp in experiences %}
-<div class="content" id="experience{{ exp.id }}">
-    <h2>{{ exp.title }}</h2>
-    <ul>
-        <li><a href="#desc{{ exp.id }}" id="desc{{ exp.id }}">Description</a></li>
-        <li><a href="#place{{ exp.id }}" id="place{{ exp.id }}">Place</a></li>
-    </ul>
+        {% for exp in experiences %}
+            <div class="content" id="exp{{ exp.id }}">
+                <h2>{{ exp.title }}</h2>
+                <a href="#desc{{ exp.id }}">Description</a>
+                <a href="#place{{ exp.id }}">Place</a>
+                <a href="#skills{{ exp.id }}">Skills</a>
+                <a href="#tools{{ exp.id }}">Tools</a>
 
-    <p id="desc{{ exp.id }}">
-    {{ exp.desc }}
-    </p>
-    <p id="place{{ exp.id }}">
-    {{ exp.place.name }}
-    {{ exp.place.address }}
-    {{exp.place.city }}
-    </p>
-</div>
-<p>
-un petit paragraphe
-</p>
-{% endfor %}
+                <p id="desc{{ exp.id }}"> {{ exp.desc }}  </p>
+
+                <p id="place{{ exp.id }}">
+                    {{ exp.place.name }}
+                    {{ exp.place.address }}
+                    {{ exp.place.city }}
+                </p>
+            </div>
+        {% endfor %}

@@ -19,6 +19,9 @@ urlpatterns = patterns('',
     (r'^education/$', 'onlineresume.views.education'),
     (r'^experience/$', 'onlineresume.views.experience'),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': '/home/ncroustillac/Dropbox/Public/mysite/myresumeonline/media'}),
+        # personale computer path
+        # {'document_root': '/home/ncroustillac/Dropbox/Public/mysite/myresumeonline/media'}),
+        # laptop path
+        { 'document_root': '/home/nil/partage/dev/onlineresume/myresumeonline/media'}),
 )
 

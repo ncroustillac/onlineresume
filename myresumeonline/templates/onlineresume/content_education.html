@@ -1,22 +1,37 @@
-{% for educ in educations %}
-<div class="content" id="educ{{ educ.id }}">
-    <h2>{{ educ.title }}</h2>
-    <ul>
-        <li><a href="#desc" id="desc">Description</a></li>
-        <li><a href="#place" id="place">Place</a></li>
-    </ul>
-    
-    <p id="desc">
-        {{ educ.desc }}
-    </p>
+<table>
+    <tr>
+        <td rowspan=0 valign="top">
+            <div class="miniMenu">
+                <ul>
+                    {% for educ in educations %}
+                    <li><a href="#educ{{educ.id}}">{{educ.start_time.year}} - {{educ.end_time.year}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </td>
 
-    <p id="place">
-        {{ educ.place.name }}
-        {{ educ.place.address }}
-        {{educ.place.city }}
-    </p>
-</div>
-<br />
-<br />
-<br />
-{% endfor %}
+        {% for educ in educations %}
+        <tr><td>
+            <h1> Educations </h1>
+            <div class="content" id="educ{{ educ.id }}">
+                <h2>{{ educ.title }}</h2>
+                <sub><i>from {{  educ.start_time }} to {{ educ.end_time }}</i></sub><br />
+                <input type="button" value="Description" id="desc" />
+                <input type="button" value="Place" id="place" />
+                <input type="button" value="Skills" id="skills" />
+                <input type="button" value="Tools" id="tools" />
+
+                <div class="contentDatas" id="desc">
+                    {{ educ.desc }}
+                </div>
+
+                <div class="contentDatas" id="place">
+                    {{ educ.place.name }}
+                    {{ educ.place.address }}
+                    {{educ.place.city }}
+                </div>
+            </div>
+        </td></tr>
+        {% endfor %}
+    </tr>
+</table>
