@@ -11,6 +11,7 @@ class Applicant(models.Model):
     last_name   = models.CharField(max_length=50)
     birth_date  = models.DateField()
     gender      = models.CharField(max_length=2, choices=GENDER_CHOICES)
+    title       = models.CharField(max_length=50)
     desc        = models.TextField()
 
 

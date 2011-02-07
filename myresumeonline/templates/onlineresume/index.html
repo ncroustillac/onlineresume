@@ -16,16 +16,19 @@
     <!-- header -->
     <div id="header">
 
+            <div id="home">
+                <h1>
+                    {{applicant.first_name}} {{applicant.last_name}}
+                </h1>
+                <sub>
+                    {{applicant.title}}
+                </sub>
+            </div>
 
             <!-- navigation -->
             <div  id="nav">
+                Index:
                 <ul>
-                    <li>
-                        <input type="button" width=300px
-                        value={{applicant.first_name}}{{applicant.last_name}}
-                        id="home" >
-                        </input>
-                    </li>
                     <li><input type="button" value="Experiences" id="experience"></input></li>
                     <li><input type="button" value="Formations" id="education"></input></li>
                     <li><input type="button" value="Competences" id="skills"></input></li>
@@ -34,12 +37,20 @@
                 </ul>
             </div>
 
+            <div id="about">
+            About:<br />
+            {{applicant.first_name}} {{applicant.last_name}}<br />
+            {{applicant.birth_dat}}<br />
+            {{applicant.desc}}<br />
+            </div>
+
     </div>
     <!-- header ends -->
 
     <!-- menu starts -->
     <div id="menu-wrap" >
-        du blabla encore du blabla
+        Here, We will see an clock and the date, see comment with addr.
+        <!--http://tutorialzine.com/2009/12/colorful-clock-jquery-css/ -->
     </div>
 
     <!-- content starts -->
@@ -48,13 +59,7 @@
         {% endblock %}
     </div>
 
-    <div id="footer-bottom">	
-        <p>
-            <a href="index.html">Home</a> |
-            <a href="index.html">Sitemap</a> |
-            <a href="index.html">RSS Feed</a> |
-            <a href="#top">Top</a>
-        </p>
+    <div id="footer-bottom">
     </div>
 
 <script type="text/javascript">
